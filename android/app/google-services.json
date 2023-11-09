@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "775982044644",
+    "project_id": "to-do-app-bbc84",
+    "storage_bucket": "to-do-app-bbc84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775982044644:android:67bed37f96d2e0de3a23f1",
+        "android_client_info": {
+          "package_name": "com.example.to_do_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtrIZ674ZS34fqx_i004886F4DYNPVbTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
