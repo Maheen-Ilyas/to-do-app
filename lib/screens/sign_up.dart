@@ -1,6 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'dart:developer' as dev show log;
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -10,16 +8,13 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  bool isLogin = true;
   late final TextEditingController _email;
   late final TextEditingController _password;
-  late final TextEditingController _username;
 
   @override
   void initState() {
     _email = TextEditingController();
     _password = TextEditingController();
-    _username = TextEditingController();
     super.initState();
   }
 
@@ -27,7 +22,6 @@ class _SignupState extends State<Signup> {
   void dispose() {
     _email.dispose();
     _password.dispose();
-    _username.dispose();
     super.dispose();
   }
 
@@ -56,22 +50,6 @@ class _SignupState extends State<Signup> {
         child: Center(
           child: Column(
             children: [
-              TextFormField(
-                controller: _username,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.person,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  labelText: 'Username',
-                  hintText: 'Enter your username',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
               TextFormField(
                 controller: _email,
                 keyboardType: TextInputType.emailAddress,
@@ -105,46 +83,6 @@ class _SignupState extends State<Signup> {
                 ),
               ),
               const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () async {
-                  final email = _email.text;
-                  final password = _password.text;
-                  // try {
-                    final userCredential =
-                        await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email: email,
-                      password: password,
-                    );
-                    dev.log(userCredential.toString());
-                  // } 
-                  // on FirebaseAuthException catch (e) {
-                  // } catch (e) {}
-                },
-                style: ButtonStyle(
-                  padding: MaterialStateProperty.resolveWith(
-                    (states) => const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 10,
-                    ),
-                  ),
-                  maximumSize: MaterialStateProperty.resolveWith(
-                      (states) => Size.infinite),
-                  shape: MaterialStateProperty.resolveWith(
-                    (states) => RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                  backgroundColor: MaterialStateProperty.resolveWith(
-                      (states) => Colors.teal),
-                ),
-                child: const Text(
-                  "Login",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
             ],
           ),
         ),

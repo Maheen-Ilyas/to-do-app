@@ -3,5 +3,6 @@
         "ARGB",
         "lato",
         "Signup"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
