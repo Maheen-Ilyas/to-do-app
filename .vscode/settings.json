@@ -1,8 +1,11 @@
 {
     "cSpell.words": [
         "ARGB",
+        "Autovalidate",
+        "Firestore",
         "lato",
-        "Signup"
+        "Signup",
+        "unfocus"
     ],
     "java.configuration.updateBuildConfiguration": "interactive"
 }
