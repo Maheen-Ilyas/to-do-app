@@ -14,10 +14,6 @@ class _SignupState extends State<Signup> {
   var _username = '';
   final _formKey = GlobalKey<FormState>();
 
-  authentication() async {
-    final isValid = _formKey.currentState!.validate();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
